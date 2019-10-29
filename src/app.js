@@ -1,6 +1,5 @@
 const Koa = require('koa');
 const BodyParser = require('koa-bodyparser');
-const pino = require('koa-pino-logger')();
 const logger = require('pino')();
 
 const connectDb = require('./lib/db');
@@ -11,9 +10,6 @@ const defaultRouter = require('./routers/default');
 // Initialize app
 const initializeApp = () => {
   const app = new Koa();
-
-  // use pino for logging
-  app.use(pino);
 
   // use bodyparser
   app.use(BodyParser());
