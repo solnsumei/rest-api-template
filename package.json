@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node src/bin/index.js",
     "dev": "nodemon src/bin/index.js",
+    "lint": "eslint src/**/*.js",
     "test": "jest --coverage --detectOpenHandles --forceExit -w 1"
   },
   "repository": {
@@ -33,7 +34,8 @@
     "koa-bodyparser": "^4.2.1",
     "koa-pino-logger": "^2.1.3",
     "moment": "^2.24.0",
-    "mongoose": "^5.7.7"
+    "mongoose": "^5.7.7",
+    "pino": "^5.13.5"
   },
   "devDependencies": {
     "eslint": "^6.6.0",
