@@ -8,6 +8,7 @@ Template for building REST APIs with Node and Koa JS
 - Router
 - Test setup
 - Database ODM
+- Logging
 
 ### Built with
 - Node
