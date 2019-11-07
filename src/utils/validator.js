@@ -14,10 +14,10 @@ module.exports = {
     assert(itemType, 'Item type must be provided');
     assert(schema, 'Schema must be provided');
 
-    const toValidateObj = itemType === 'body' ? ctx.request.body : ctx[itemType];
+    const requestToValidate = itemType === 'body' ? ctx.request.body : ctx[itemType];
     const options = { ...opt, allowUnknown: true };
 
-    const result = Joi.validate(toValidateObj, schema, { ...options });
+    const result = schema.validate(requestToValidate, { ...options });
     if (!result.error) {
       return next();
     }

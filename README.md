@@ -28,10 +28,10 @@ Template for building REST APIs with Node and Koa JS
 ```
   const { Joi, itemTypes, validate } = require('../utils/validator');
 
-  const registrationSchema = {
+  const registrationSchema = Joi.object({
     username: Joi.string().min(4).max(30).required(),
     password: Joi.string().required()
-  };
+  });
 
   const validateRegistration = () => validate({
     schema: registrationSchema,
@@ -56,8 +56,8 @@ Template for building REST APIs with Node and Koa JS
 - define your mongoose models and you are good to go.
 
 ### Run
-- run `yarn start`
+- run `npm run dev`
 
 ### Testing
-- run `yarn test`
+- run `npm test`
 
